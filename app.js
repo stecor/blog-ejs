@@ -48,7 +48,9 @@ app.get('/contact', function (req, res) {
   res.render('contact', { contactContent: contactContent })
 })
 
-app.get('/compose', function (req, res) {})
+app.get('/compose', function (req, res) {
+  res.render('compose')
+})
 
 app.listen(3000, function () {
   console.log('Server running port 3000')
