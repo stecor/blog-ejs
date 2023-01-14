@@ -39,8 +39,7 @@ app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/', function (req, res) {
-  res.render('home', { StartContent: homeStartContent })
-  console.log(posts)
+  res.render('home', { startContent: homeStartContent, posts: posts })
 })
 
 app.get('/about', function (req, res) {

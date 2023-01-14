@@ -1,7 +1,9 @@
 <%- include('partials/header') -%>
 <div class="container">
   <h1>Home</h1>
-  <p><%= StartContent %></p>
+  <p><%= startContent %></p>
+  <% if(posts.length>0){ posts.forEach(element => { console.log(element.title)
+  }); } %>
 </div>
 
 <%- include('partials/footer') -%>
