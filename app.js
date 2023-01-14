@@ -30,6 +30,8 @@ the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
 and more recently with desktop publishing software like Aldus PageMaker
 including versions of Lorem Ipsum.`
 
+const posts = []
+
 app.set('view engine', 'ejs')
 
 app.use(express.static('public'))
@@ -38,6 +40,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/', function (req, res) {
   res.render('home', { StartContent: homeStartContent })
+  console.log(posts)
 })
 
 app.get('/about', function (req, res) {
@@ -53,7 +56,12 @@ app.get('/compose', function (req, res) {
 })
 
 app.post('/compose', function (req, res) {
-  console.log(req.body.postTitle)
+  const post = {
+    title: req.body.postTitle,
+    content: req.body.postText,
+  }
+  posts.push(post)
+  res.redirect('/')
 })
 
 app.listen(3000, function () {
