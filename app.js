@@ -70,6 +70,8 @@ app.get('/posts/:postName', function (req, res) {
   posts.forEach((element) => {
     if (element.title === requestedTitle) {
       console.log('Matched found!')
+    } else {
+      console.log('No a Match!')
     }
   })
 })
