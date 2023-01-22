@@ -1,6 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-
+const _ = require('lodash')
+const ejs = require('ejs')
 const app = express()
 
 const homeStartContent = `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -68,7 +69,8 @@ app.get('/posts/:postName', function (req, res) {
   const requestedTitle = req.params.postName
 
   posts.forEach((element) => {
-    if (element.title === requestedTitle) {
+    const storedTitle = element.title
+    if (_.lowerCase(storedTitle) === requestedTitle) {
       console.log('Matched found!')
     } else {
       console.log('No a Match!')
