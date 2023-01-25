@@ -4,7 +4,7 @@
   <p><%= startContent %></p>
   <% if(posts.length>0){ posts.forEach(element => { %>
   <h1><%= element.title %></h1>
-  <p><%= element.content %></p>
+  <p><%= element.content.substr(0,150) + "..." %>   <a href= '/posts/<%= element.title %>'>Read More</a> </p>
 
   <% }); } %>
 </div>
