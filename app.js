@@ -67,7 +67,7 @@ app.post('/compose', function (req, res) {
 })
 
 app.get('/posts/:postName', function (req, res) {
-  // console.log(req.params.postName)
+   console.log(req.params.postName)
   const requestedTitle = _.lowerCase(req.params.postName)
 
   posts.forEach(function(post) {
